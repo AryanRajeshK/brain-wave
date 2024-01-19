@@ -28,19 +28,16 @@ const Challenges = async ({
             <main className="md:pl-[135px] h-full">
                 <HomeMobileToggle/>
                 <div className="flex items-center justify-between mt-5">
-                        <div className="text-4xl ml-9">
+                        <div className="text-4xl ml-9 mb-7">
                         Welcome <strong>{currprofile.name.split(' ')[0]}</strong>!
                         </div>
                 </div>
-                <div className="text-1xl ml-9 mb-4">
-                        Challenges
-                </div> 
                 <Separator className="h-[2px] bg-[#c073bc] rounded-md w-21 mx-auto mb-4" />
                 <div className="flex justify-between">
-                    <div className="text-4xl ml-9 ">Challenges</div>
-                    <div className="text-4xl mr-12">Prize</div>
+                    <div className="text-4xl font-bold text-center py-4 ml-9 ">Challenges</div>
+                    <div className="text-4xl font-bold text-center py-4 mr-12">Prize</div>
                 </div>
-                <div className="flex items-center flex-wrap gap-10 p-9">
+                <div className="flex items-center flex-wrap gap-3 p-9">
                 {challenges.map((challenge) => (
                             <div key={challenge.id} className="mb-2 w-full">
                                 <NavigationItem

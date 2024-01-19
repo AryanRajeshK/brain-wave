@@ -19,6 +19,7 @@ model Profile {
   servers Server[]
   members Member[]
   channels Channel[]
+  posts Post[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -118,6 +119,7 @@ model Challenge {
 
 }
 
+// Channels messages
 model Message {
   id String @id @default(uuid())
   content String @db.Text
@@ -139,6 +141,7 @@ model Message {
   @@index([memberId])
 }
 
+// DMs
 model Conversation {
   id String @id @default(uuid())
 
@@ -173,4 +176,22 @@ model DirectMessage {
 
   @@index([memberId])
   @@index([conversationId])
+}
+
+// Virtual Exhibits
+model Post {
+  id String @id @default(uuid())
+  content String @db.Text
+
+  fileUrl String? @db.Text
+
+  profileId String
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  deleted Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([profileId])
 }

@@ -63,7 +63,7 @@ const ChallengePage = async ({
 
             <div className="flex items-center justify-between mt-5">
                         <div className="text-4xl ml-9 mb-4">
-                Welcome to chalenge <strong>{challenge.name}</strong>!
+                Welcome to challenge <strong>{challenge.name}</strong>!
                         </div>
                 </div>
                 <Separator className="h-[2px] bg-[#c073bc] rounded-md w-21 mx-auto mb-10" />
