@@ -48,10 +48,10 @@ const SetupPage = async () => {
         // return redirect(`/servers/${server.id}`);
         return (
             <div className="h-full">
-                <div className="hidden md:flex h-full w-[120px] z-30 flex-col fixed inset-y-0">
+                <div className="hidden md:flex h-full w-[110px] z-30 flex-col fixed inset-y-0">
                     <NavigationSidebar />
                 </div>
-                <main className="md:pl-[120px] h-full">
+                <main className="md:pl-[120px] pr-[20px] h-full">
                     <HomeMobileToggle/>
                     
                     <div className="flex items-center justify-between md:mt-5">
@@ -59,7 +59,6 @@ const SetupPage = async () => {
                     <div className="text-4xl ml-8">
                         Welcome <strong>{currprofile.name ? currprofile.name.split(' ')[0] : 'User'}</strong>!
                     </div>
-
                         <div className="flex items-center">   
                             <NavigationAction/>
                             <div className="mr-2">

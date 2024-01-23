@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, PenLine } from "lucide-react";
 import { MobileToggle } from "../mobile-toggle";
 import { SocketIndicator } from "../socket-indicator";
 import { UserAvatar } from "../user-avatar";
@@ -29,6 +29,9 @@ export const ChatHeader = ({
                 {name}
             </p>
             <div className="ml-auto flex items-center">
+                <a href="/whiteboard" className="rounded hover:text-gray-400">
+                    <PenLine className="mr-3"/>
+                </a>
                 <SocketIndicator/>
             </div>
         </div>

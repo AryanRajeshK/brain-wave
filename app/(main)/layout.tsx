@@ -5,10 +5,10 @@ const MainLayout = async ({
 }: {children: React.ReactNode}) => {
     return ( 
         <div className="h-full">
-            <div className="hidden md:flex h-full w-[135px] z-30 flex-col fixed inset-y-0">
+            <div className="hidden md:flex h-full w-[110px] z-30 flex-col fixed inset-y-0">
                 <NavigationSidebar/>
             </div>
-            <main className="md:pl-[135px] h-full">
+            <main className="md:pl-[99px] h-full">
                 {children}
             </main>
         </div>

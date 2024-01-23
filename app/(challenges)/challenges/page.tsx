@@ -22,17 +22,17 @@ const Challenges = async ({
     
     return ( 
         <div className="h-full">
-            <div className="hidden md:flex h-full w-[135px] z-30 flex-col fixed inset-y-0">
+            <div className="hidden md:flex h-full w-[110px] z-30 flex-col fixed inset-y-0">
                 <NavigationSidebar/>
             </div>
-            <main className="md:pl-[135px] h-full">
+            <main className="md:pl-[120px] pr-[20px] h-full">
                 <HomeMobileToggle/>
                 <div className="flex items-center justify-between mt-5">
                         <div className="text-4xl ml-9 mb-7">
                         Welcome <strong>{currprofile.name.split(' ')[0]}</strong>!
                         </div>
                 </div>
-                <Separator className="h-[2px] bg-[#c073bc] rounded-md w-21 mx-auto mb-4" />
+                <Separator className="h-[3px] bg-[#a733b9] w-full mt-2" />
                 <div className="flex justify-between">
                     <div className="text-4xl font-bold text-center py-4 ml-9 ">Challenges</div>
                     <div className="text-4xl font-bold text-center py-4 mr-12">Prize</div>

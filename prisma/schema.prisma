@@ -178,7 +178,6 @@ model DirectMessage {
   @@index([conversationId])
 }
 
-// Virtual Exhibits
 model Post {
   id String @id @default(uuid())
   content String @db.Text
@@ -195,3 +194,4 @@ model Post {
 
   @@index([profileId])
 }
+

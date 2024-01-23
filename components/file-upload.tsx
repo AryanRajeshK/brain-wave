@@ -7,7 +7,7 @@ import Image from "next/image";
 interface FileUploadProps {
     onChange: (url?: string) => void;
     value: string;
-    endpoint: "messageFile" |  "serverImage"
+    endpoint: "messageFile" |  "serverImage" 
 }
 
 export const FileUpload = ({
