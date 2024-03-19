@@ -6,7 +6,7 @@ import qs from "query-string";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "../ui/dialog";
-
+import { toast} from "sonner"
 
 
 export const DeleteMessageModal = () => {
@@ -20,6 +20,7 @@ export const DeleteMessageModal = () => {
             })
             await axios.delete(url);
             onClose();
+            toast.success('Message Deleted');
         } catch(error) {
             console.log(error)
         } finally {

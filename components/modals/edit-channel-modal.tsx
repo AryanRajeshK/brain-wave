@@ -20,6 +20,7 @@ import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "../ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { Input } from "../ui/input";
+import { toast} from "sonner"
 
 const formSchema = z.object({
     name: z.string().min(1, {
@@ -75,6 +76,7 @@ export const EditChannelModal = () => {
             form.reset();
             router.refresh();
             onClose();
+            toast.success('Channel Edited');
         } catch (error) {
             console.log(error);
         }

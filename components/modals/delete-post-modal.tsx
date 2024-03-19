@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "../ui/dialog";
 import { db } from "@/lib/db";
+import { toast} from "sonner"
 
 
 
@@ -19,6 +20,7 @@ export const DeletePostModal = () => {
             setIsLoading(true)
             await axios.delete(`/api/posts/${post}`);
             onClose();
+            toast.success('Post Deleted');
             router.refresh();
             router.push("/virtualexhibits");
             router.refresh();

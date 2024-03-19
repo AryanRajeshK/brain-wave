@@ -7,7 +7,7 @@ import qs from "query-string";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "../ui/dialog";
-
+import { toast} from "sonner"
 
 
 export const DeleteChannelModal = () => {
@@ -26,6 +26,7 @@ export const DeleteChannelModal = () => {
             })
             await axios.delete(url);
             onClose();
+            toast.success('Channel Deleted!')
             router.refresh();
             router.push(`/servers/${server?.id}`);
             router.refresh();
