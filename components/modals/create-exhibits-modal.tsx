@@ -11,6 +11,7 @@ import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "../ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { Input } from "../ui/input";
+import { toast } from "sonner"
 
 const formSchema = z.object({
     description: z.string().min(1, {
@@ -48,6 +49,7 @@ export const CreateExhibitModal = () => {
             router.push("/virtualexhibits");
             router.refresh();
             onClose();
+            toast.success('Success!');
         } catch (error) {
             console.log(error);
         }

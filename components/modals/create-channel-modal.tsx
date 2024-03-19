@@ -13,6 +13,7 @@ import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "../ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { Input } from "../ui/input";
+import { toast } from "sonner"
 
 const formSchema = z.object({
     name: z.string().min(1, {
@@ -58,7 +59,7 @@ export const CreateChannelModal = () => {
 
     const isLoading = form.formState.isSubmitting;
 
-    const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const onSubmit = async (values: z.infer<typeof formSchema>)  => {
         try {
             const url = qs.stringifyUrl({
                 url: "/api/channels",
@@ -70,6 +71,9 @@ export const CreateChannelModal = () => {
             form.reset();
             router.refresh();
             onClose();
+            // Added toast here
+            toast.success('Success!');
+            
         } catch (error) {
             console.log(error);
         }

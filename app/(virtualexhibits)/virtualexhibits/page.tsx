@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { PostButton } from "@/components/navigation/postButton";
 import { PostItems } from "@/components/navigation/postItems";
 import { db } from "@/lib/db";
+import { toast } from 'sonner'
 
 const VirtualExhibits = async ({
     children

@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 import { Noto_Sans } from 'next/font/google'
 import './globals.css'
 import { QueryProvider } from '@/components/providers/query-provider'
+import { Toaster, toast } from 'sonner'
 
 const font = Noto_Sans({ subsets: ['latin'] })
 
@@ -38,6 +39,7 @@ export default function RootLayout({
               <QueryProvider>
                 {children}
               </QueryProvider>
+              <Toaster />
             </SocketProvider>
           </ThemeProvider>
         </body>

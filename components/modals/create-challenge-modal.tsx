@@ -12,6 +12,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "../ui/input";
 import { TextArea } from "../ui/textarea";
 import { FileUpload } from "../file-upload";
+import { toast} from "sonner"
 
 const formSchema = z.object({
     name: z.string().min(1, {
@@ -70,7 +71,7 @@ export const CreateChallengeModal = () => {
     //         console.log(error);
     //     }
     // }
-    const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const onSubmit = async (values: z.infer<typeof formSchema>)  => {
         try {
             // First, create the server entry and get the server id
             const serverResponse = await axios.post("/api/servers", {
@@ -89,6 +90,7 @@ export const CreateChallengeModal = () => {
             form.reset();
             router.refresh();
             onClose();
+            toast.success("Success!")
         } catch (error) {
             console.log(error);
         }
@@ -238,7 +240,7 @@ export const CreateChallengeModal = () => {
                                 />
                             <div className="flex justify-end">
                             <DialogFooter className="bg-grey-100 px-6 py-4 mt-2">
-                                <Button disabled={isLoading} variant="brain" className="bg-purple-600 dark:bg-purple-900">
+                                <Button disabled={isLoading}  variant="brain" className="bg-purple-600 dark:bg-purple-900">
                                     Create
                                 </Button>
                             </DialogFooter>
