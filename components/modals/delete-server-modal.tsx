@@ -55,7 +55,7 @@ export const DeleteServerModal = () => {
                 </DialogHeader>
                 <DialogFooter className="bg-[#310a4477] px-6 py-4">
                 <div className="flex items-center justify-end w-full">
-                    <Toaster richColors/>
+                    
                     <Button 
                         disabled={isLoading}
                         variant="destructive"
